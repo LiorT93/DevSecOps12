@@ -30,38 +30,6 @@ def check_win(board, player):
     for row in board:
         if row[0] == row[1] == row[2] == player:
             return True
-    # Starting board
-board = [["_", "_", "_"], ["_", "_", "_"], ["_", "_", "_"]]
-
-# Print board rows
-def display_board(board):
-    for row in board:
-        print(" ".join(row))
-
-# Ask the user for next move
-def get_move():
-    row = int(input("Enter row (0-2): "))
-    col = int(input("Enter column (0-2): "))
-    return row, col
-
-# Check if the user input is valid
-def is_valid_move(board, row, col):
-    if row < 0 or row > 2 or col < 0 or col > 2:
-        return False
-    if board[row][col] != "_":
-        return False
-    return True
-
-# Update the board with the user move
-def update_board(board, row, col, player):
-    board[row][col] = player
-
-
-def check_win(board, player):
-    # Check rows for win
-    for row in board:
-        if row[0] == row[1] == row[2] == player:
-            return True
     # Check columns for win
     for col in range(3):
         if board[0][col] == board[1][col] == board[2][col] == player:
